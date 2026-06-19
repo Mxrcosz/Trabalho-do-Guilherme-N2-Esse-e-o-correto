@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Agenda de Contatos</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header>
+  <h1>Agenda de Contatos</h1>
+</header>
+
+<main>
+
+  <section id="secao-formulario">
+    <h2 id="titulo-form">Adicionar Contato</h2>
+
+    <div id="msg-status"></div>
+
+    <form id="formulario">
+      <div id="campo-nome">
+        <label for="nome">Nome *</label>
+        <input type="text" id="nome" placeholder="Nome completo" />
+      </div>
+
+      <div id="campo-telefone">
+        <label for="telefone">Telefone *</label>
+        <input type="tel" id="telefone" placeholder="(00) 00000-0000" maxlength="15" />
+      </div>
+
+      <div id="campo-email">
+        <label for="email">E-mail</label>
+        <input type="email" id="email" placeholder="exemplo@email.com" />
+      </div>
+
+      <div id="campo-nascimento">
+        <label for="nascimento">Data de Nascimento</label>
+        <input type="date" id="nascimento" />
+      </div>
+
+      <div id="campo-endereco">
+        <label for="endereco">Endereço</label>
+        <input type="text" id="endereco" placeholder="Rua, número, bairro, cidade" />
+      </div>
+
+      <div id="campo-obs">
+        <label for="obs">Observações</label>
+        <textarea id="obs" placeholder="Informações adicionais..."></textarea>
+      </div>
+
+      <div id="botoes-form">
+        <button type="button" id="btn-salvar" onclick="salvarContato()">Salvar</button>
+        <button type="button" id="btn-cancelar" onclick="limparFormulario()">Cancelar</button>
+      </div>
+    </form>
+  </section>
+
+  <section id="secao-lista">
+    <div id="toolbar">
+      <input type="text" id="busca" placeholder="Pesquisar por nome, e-mail ou telefone..." oninput="renderizarLista()" />
+
+      <select id="ordenacao" onchange="renderizarLista()">
+        <option value="criacao">Ordem de criação</option>
+        <option value="alfabetica">Ordem alfabética</option>
+        <option value="nascimento">Ordem por nascimento</option>
+      </select>
+
+      <span id="total-label">0 contatos</span>
+    </div>
+
+    <div id="lista-contatos">
+      <p id="sem-contatos">Nenhum contato cadastrado ainda.</p>
+    </div>
+  </section>
+
+</main>
+
+<script src="mainjstrabalho.js"></script>
+
+</body>
+</html>
